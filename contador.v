@@ -1,13 +1,11 @@
 module contador(Ck, Q);
 
 	input Ck;
-	output [1:0]Q;
-	wire [3:0]F;
+	output [2:0]Q;
 	
-	or(F[1], 1'b0, F[0]);
-	or(F[3], 1'b0, F[2]);
+	wire [2:0]F;
 	
-	JKflipf(Q[0], F[0], F[1], Ck);
-	JKflipf(Q[1], F[2], F[3], F[0]);
-	
+	DFlipFlop(F[0], Ck, Q[0], F[0]);
+	DFlipFlop(F[1], F[0], Q[1], F[1]);
+	DFlipFlop(F[2],  F[1], Q[2], F[2]);
 endmodule
