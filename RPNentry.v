@@ -1,13 +1,12 @@
-module RPNentry(E, A, bt, CK, switch1, switch2);
+module RPNentry(E, S0, S1, S2, bt, CK, switch1, switch2);
 	input [7:0] E;
 	input CK, bt, switch1, switch2;
-	output [7:0]A;
-	output [2:0]Op, Base;
+	output [6:0]S0, S1, S2;
 	
 	wire [1:0]cont;
-	wire [3:0]DeciCont;
+	wire [3:0] BCD0, BCD1, BCD2, DeciCont;
 	wire btDebounced;
-	wire [7:0]S, B;
+	wire [7:0]S, B, A;
 	
 	debouncer(bt, CK, btDebounced);
 	counterRPN(btDebounced, cont);
@@ -23,6 +22,12 @@ module RPNentry(E, A, bt, CK, switch1, switch2);
 	Reg8bits(B, CK, E, DeciCont[1]);
 	Reg3bits(Op, CK, E[2:0], DeciCont[2]);
 	Reg3bits(Base, CK, E[2:0], DeciCont[3]);
+	
+	BinaryToBCD(A, BCD0, BCD1, BCD2);
+	
+	decodificador7seg(BCD0, S0);
+	decodificador7seg(BCD1, S1);
+	decodificador7seg(BCD2, S2);
 	
 	
 endmodule
