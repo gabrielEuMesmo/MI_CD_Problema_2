@@ -1,0 +1,14 @@
+module CoutBout(Cout, Bout, OP, S);
+
+	input Cout, Bout;
+	input [2:0] OP;
+	
+	output S;
+	
+	ParteMux(SPart[0], OP, Cout);
+	
+	ParteMux1(SPart[1], OP, Bout);
+	
+	or(S, SPart[0], SPart[1]);
+	
+endmodule 

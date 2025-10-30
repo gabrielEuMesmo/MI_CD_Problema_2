@@ -1,0 +1,12 @@
+module CarryIn(D, Q, CK, Enable);
+
+	input D, CK, Enable;
+	output Q;
+	
+	wire T;
+	
+	DFlipFlopNeg(T, CK, Q,);
+	
+	mux1(D, Q, Enable, T);
+	
+endmodule
