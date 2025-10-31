@@ -2,12 +2,12 @@ module RPNentry(E, S0, S1, S2, bt, CK, switch1, switch2, Cout, OV, ZERO, ERRO,);
 	input [7:0] E;
 	input CK, bt, switch1, switch2;
 	output [6:0]S0, S1, S2;
-	output Cout, OV, ZERO, ERRO,;
+	output Cout, OV, ZERO, ERRO;
 	
 	wire [1:0]cont;
 	wire [3:0] BCD0, BCD1, BCD2, DeciCont,SaidaBase0, SaidaBase1,SaidaBase2;
 	wire btDebounced, CinEntry, CoutOP;
-	wire [7:0] B, A, Saida, SaidaOp;
+	wire [7:0] B, A, Saida, SaidaOp, Z;
 	wire [2:0] OP, Base;
 	
 	debouncer(bt, CK, btDebounced);
@@ -19,13 +19,13 @@ module RPNentry(E, S0, S1, S2, bt, CK, switch1, switch2, Cout, OV, ZERO, ERRO,);
 	
 	and(RstOuQ, DeciCont[3], switch1);
 	
-	mux1_8bits(Saida, E, switch1, Z);
+	mux1_8bits(Saida, E, switch2, Z);
 	
 	mux1(switch1, Cout, switch2, CinEntry);
 	
 	CarryIn(CinEntry, Cin, CK, ~DeciCont[0]);
 	
-	Reg8bits(Z, CK, E, ~DeciCont[0]);
+	Reg8bits(A, CK, Z, ~DeciCont[0]);
 	Reg8bits(B, CK, E, ~DeciCont[1]);
 	Reg3bits(OP, CK, E[2:0], ~DeciCont[2]);
 	Reg3bits(Base, CK, E[2:0], ~DeciCont[3]);
