@@ -1,5 +1,6 @@
 module decodificador7seg(A, S);
 
+	// Decodificador de uma palavra binaria de 4 bits para saida em display de 7 segmentos;
 	input [3:0]A;
 	output [6:0]S;
 	

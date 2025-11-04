@@ -1,5 +1,7 @@
 module Subtrator8bits(S, Bout, A, B, Bin);
 
+	// Subtrator completo de 8 bits
+
 	input [7:0] A, B;
 	input Bin;
 	output [7:0] S;

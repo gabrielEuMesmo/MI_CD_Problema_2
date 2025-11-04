@@ -1,5 +1,7 @@
 module counterMult(CK, S);
 
+// Contador assincrono de 4 bits
+
 	input CK;
 	output [3:0] S;
 	

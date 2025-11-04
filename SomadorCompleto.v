@@ -1,5 +1,7 @@
 module SomadorCompleto(S, Cout, A, B, Cin);
 
+	// Somador Completo
+
 	input A, B, Cin;
 	output S, Cout;
 	

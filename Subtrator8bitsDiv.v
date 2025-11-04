@@ -1,5 +1,6 @@
 module Subtrator8bitsDiv(S, Bout, A, B, C);
 
+	// Subtrator de 8 bits sem Carry In e com um bit de entrada separado;
 	input [7:0] B;
 	input [6:0] A;
 	input C;

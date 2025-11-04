@@ -1,5 +1,7 @@
 module N8bits(S,A);
 
+// Módulo da operação lógica NOT
+
 	input [7:0] A;
 	output [7:0] S;
 	

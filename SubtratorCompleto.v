@@ -1,5 +1,7 @@
 module SubtratorCompleto(S, Bout, A, B, Bin);
 
+	// Subtrator Completo de 1 bit;
+
 	input A, B, Bin;
 	output S, Bout;
 	

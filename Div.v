@@ -1,5 +1,7 @@
 module Div(A, B, DivR, T);
 
+	// Módulo de Divisão com escolha de demontrar resto ou quociente
+
 	input [7:0] A, B;
 	input DivR;
 	output [7:0] T;
@@ -14,6 +16,8 @@ module Div(A, B, DivR, T);
 	parteDiv(P4[4:0], B, A[2], S[2], P5);
 	parteDiv(P5[5:0], B, A[1], S[1], P6);
 	parteDiv(P6[6:0], B, A[0], S[0], R);
+	
+	// Multiplexadores responsaveis pela escolha de demontrar resto ou quociente
 	
 	mux1(S[0], R[0], DivR, T[0]);
 	mux1(S[1], R[1], DivR, T[1]);

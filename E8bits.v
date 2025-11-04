@@ -1,5 +1,7 @@
 module E8bits(S, A, B);
 
+// Módulo da operação lógica AND
+
 	input [7:0] A, B;
 	output [7:0] S;
 	

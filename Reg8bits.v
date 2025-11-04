@@ -1,5 +1,7 @@
 module Reg8bits(Q, CK, D, Enable);
 
+	// Registrador de 8 bits com lógica de Enable;
+
 	input [7:0]D;
 	output [7:0]Q;
 	input CK, Enable;
@@ -14,6 +16,8 @@ module Reg8bits(Q, CK, D, Enable);
 	DFlipFlopNeg(T[5], CK, Q[5],);
 	DFlipFlopNeg(T[6], CK, Q[6],);
 	DFlipFlopNeg(T[7], CK, Q[7],);
+	
+	// Multiplexadores responsaveis pela lógica de Enable;
 	
 	mux1(D[0], Q[0], Enable, T[0]);
 	mux1(D[1], Q[1], Enable, T[1]);

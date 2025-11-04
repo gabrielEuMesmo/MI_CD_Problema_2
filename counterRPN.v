@@ -1,5 +1,7 @@
 module counterRPN(CK, S);
 
+	// Contador assincrono de 2 bits com FlipFlop D em cascata;
+
 	input CK;
 	output [1:0] S;
 	

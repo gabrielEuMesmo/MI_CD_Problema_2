@@ -1,5 +1,7 @@
 module multiplexador8(S, Sel, A, B, C, D, E, F, G, H);
 
+	// Multiplexador de 8 entradas para 1 saída;
+
 	input  A, B, C, D, E, F, G, H;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 	input [2:0]Sel;
 	

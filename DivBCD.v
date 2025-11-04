@@ -1,5 +1,7 @@
 module DivBCD(A, B, R, S);
 
+	// Divisor com lógica de recuperação;
+
 	input [7:0] A, B;
 	output [7:0] R, S;
 	

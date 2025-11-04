@@ -1,5 +1,7 @@
 module multiplexador8_8bits(S, Sel, A, B, C, D, E, F, G, H);
 
+	// Multiplexador de 8 bits de 8 entradas e 1 saida;
+
 	input [7:0] A, B, C, D, E, F, G, H;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 	input [2:0]Sel;
 	

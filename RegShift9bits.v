@@ -1,5 +1,7 @@
 module RegShift9bits(Q, CK, D, Enable);
 
+	// Registrador de deslocamento com lógica de enable
+	
 	input [8:0]D;
 	output [8:0]Q;
 	input CK, Enable;
@@ -16,6 +18,7 @@ module RegShift9bits(Q, CK, D, Enable);
 	DFlipFlopNeg(T[7], CK, Q[7],);
 	DFlipFlopNeg(T[8], CK, Q[8],);
 	
+	// Multiplexadores responsaveis por ativar a lógica de deslocamento, ou modificação de valores
 	
 	mux1(Q[1], D[0], Enable, T[0]);
 	mux1(Q[2], D[1], Enable, T[1]);

@@ -1,5 +1,7 @@
 module Reg8bitsMult(Q, CK, D);
 
+// Registrador de 8 bits simples
+
 	input [7:0]D;
 	output [7:0]Q;
 	input CK;

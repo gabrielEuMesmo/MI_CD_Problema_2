@@ -1,5 +1,7 @@
 module operacoes(A, B, Cin, RstOuQ, CK, OP, SaidaOp, OV, ZERO, ERRO, Cout);
 
+	//ULA combinacional;
+
 	input [7:0] A, B;
 	output [7:0] SaidaOp;
 	
@@ -11,6 +13,10 @@ module operacoes(A, B, Cin, RstOuQ, CK, OP, SaidaOp, OV, ZERO, ERRO, Cout);
 	wire [7:0]Soma, Sub, DivRQ, OU, OUEX, E, N, Mult;
 	
 	wire CoutS, Bout, OVpart;
+	
+	// Instaciação das operações;
+	
+	//==========================================================================================================
 	
 	Somador8bits(Soma, CoutS, A, B, Cin);
 	
@@ -28,7 +34,14 @@ module operacoes(A, B, Cin, RstOuQ, CK, OP, SaidaOp, OV, ZERO, ERRO, Cout);
 	
 	mainMult(A, B, Mult, CK, OVpart);
 	
+	//==========================================================================================================
+	
+	// Multiplexador para decidir a saída;
+	
 	multiplexador8_8bits(SaidaOp, OP,Soma, Sub, DivRQ, OU, OUEX, E, N, Mult);
+	
+	
+	//Bloco de decsão de flags;
 	
 	CoutBout(CoutS, Bout, OP, Cout);
 	

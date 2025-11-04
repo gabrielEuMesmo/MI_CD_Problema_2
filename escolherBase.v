@@ -1,5 +1,7 @@
 module escolherBase(A, B, C, S, Z);
 
+	//Multiplexador de 4 bits de 3 entradas e 1 saída;
+	
 	input [3:0] A, B, C;
 	
 	input [1:0] S;

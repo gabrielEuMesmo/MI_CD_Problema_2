@@ -1,5 +1,7 @@
 module mux1_8bits(A, B, S, Z);
 
+	// Multiplexador de 8 bits de 2 entradas e 1 saída;
+
 	input [7:0] A, B;
 	input S;
 	output [7:0]Z;

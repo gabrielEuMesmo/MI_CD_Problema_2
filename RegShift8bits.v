@@ -1,5 +1,7 @@
 module RegShift8bits(E, Q, CK, D, salvaB, desloca);
 
+	// Registrador de deslocamento de 8 bits com lógica para salvar um novo valor ou deslocar;
+
 	input [7:0]D;
 	output [7:0]Q;
 	input CK, E, salvaB, desloca;
@@ -16,6 +18,8 @@ module RegShift8bits(E, Q, CK, D, salvaB, desloca);
 	DFlipFlopNeg(T[6], CKReg, Q[6],);
 	DFlipFlopNeg(T[7], CKReg, Q[7],);
 	
+	// Multiplexadores responsaveis por salvar um novo valor ou manter lógica de deslocamento;
+	
 	mux1(Q[1], D[0], salvaB, T[0]);
 	mux1(Q[2], D[1], salvaB, T[1]);
 	mux1(Q[3], D[2], salvaB, T[2]);
@@ -25,6 +29,7 @@ module RegShift8bits(E, Q, CK, D, salvaB, desloca);
 	mux1(Q[7], D[6], salvaB, T[6]);
 	mux1(E, D[7], salvaB, T[7]);
 	
+	// Parte responsavel por ativar ou não a lógica de deslocamento;
 	and(CKdesloca ,desloca, ~CK);
 	
 	mux1(CKdesloca, ~CK, salvaB, CKReg);

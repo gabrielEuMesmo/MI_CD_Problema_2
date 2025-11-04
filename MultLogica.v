@@ -1,4 +1,6 @@
-module MultLogica(S, A, B);
+module MultBool(S, A, B); 
+
+// Módulo de multiplicação Booleana de A por um bit de B
 	
 	input [7:0]A;
 	input B;

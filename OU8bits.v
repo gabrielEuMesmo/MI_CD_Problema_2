@@ -1,5 +1,8 @@
 module OU8bits(S, A, B);
 
+// Módulo da operação lógica OR
+
+
 	input [7:0] A, B;
 	output [7:0] S;
 	

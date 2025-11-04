@@ -1,5 +1,7 @@
 module Somador8bits(S, Cout, A, B, Cin);
 
+	// Somador de 8 bits;
+
 	input [7:0] A, B;
 	input Cin;
 	output [7:0] S;

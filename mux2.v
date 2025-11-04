@@ -1,5 +1,7 @@
 module mux2(A, B, C, S, Z);
 
+	// Multiplexador de 3 entradas e uma saída;
+
 	input A, B, C;
 	input [1:0] S;
 	output Z;

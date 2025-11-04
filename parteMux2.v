@@ -1,4 +1,7 @@
 module parteMux2(Z, Sel, A);
+
+	//módulo parte do multiplexador de 8 entradas;
+	//responsavel pela operação 2;
 	
 	input A;
 	input [2:0]Sel;
